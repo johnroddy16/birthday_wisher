@@ -20,8 +20,6 @@ matches = df[(df['month'] == cur_month) & (df['day'] == cur_day)]
 
 birthday_people = matches[['name', 'email']].values.tolist()
 
-print(birthday_people) # [['John', 'johnroddy.16@gmail.com'], ['Labowski', 'johnroddy16@yahoo.com']]
-
 # 3. If step 2 is true, pick a random letter from letter templates and replace the [NAME] with the person's actual name from birthdays.csv
 
 letter_folder = 'letter_templates'
