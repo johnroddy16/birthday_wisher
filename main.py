@@ -47,7 +47,7 @@ def generate_birthday_message(name):
 def send_birthday_message(to_address, msg):
     # email and app password:
     email = 'nohtyp742@gmail.com'
-    password = 'xddewbafczduzurt'
+    password = 'not a real password'
     
     # create the connection:
     with smtplib.SMTP('smtp.gmail.com', port=587) as connection:
