@@ -10,6 +10,7 @@ now = dt.datetime.now()
 cur_month = now.month 
 cur_day = now.day  
 
+# create pandas data frame:
 df = pd.read_csv('birthdays.csv')
 
 # check if today matches a birthday in the birthdays.csv:
