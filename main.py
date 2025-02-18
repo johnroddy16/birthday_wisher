@@ -4,11 +4,7 @@ import pandas as pd
 import smtplib 
 import datetime as dt 
 from random import choice 
-import os 
-
-# 1. Update the birthdays.csv  
-
-# 2. Check if today matches a birthday in the birthdays.csv 
+import os    
 
 now = dt.datetime.now()
 cur_month = now.month 
@@ -16,11 +12,10 @@ cur_day = now.day
 
 df = pd.read_csv('birthdays.csv')
 
+# check if today matches a birthday in the birthdays.csv:
 matches = df[(df['month'] == cur_month) & (df['day'] == cur_day)] 
 
 birthday_people = matches[['name', 'email']].values.tolist()
-
-# 3. If step 2 is true, pick a random letter from letter templates and replace the [NAME] with the person's actual name from birthdays.csv
 
 letter_folder = 'letter_templates'
 
@@ -41,8 +36,6 @@ def generate_birthday_message(name):
     person_message = letter_content.replace('[NAME]', name)
     
     return person_message 
-
-# 4. Send the letter generated in step 3 to that person's email address.
 
 def send_birthday_message(to_address, msg):
     # email and app password:
